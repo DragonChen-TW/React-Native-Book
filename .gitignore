@@ -1,3 +1,4 @@
+# React Native
 node_modules/**/*
 .expo/*
 npm-debug.*
@@ -5,3 +6,6 @@ npm-debug.*
 *.p12
 *.key
 *.mobileprovision
+
+# Atom
+.vscode/*
