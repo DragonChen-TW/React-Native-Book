@@ -22,11 +22,11 @@ export default class MainTabBar extends Component{
         name={pageNext}
       >
         <Text style={{fontSize: 40}}>{pageNext}</Text>
-        <Button title={'點擊顯示詳情 ' + this.props.id}
+        {/* <Button title={'點擊顯示詳情 ' + this.props.id}
           onPress={
             this.gotoDetails(pageNext).bind(this)
           }
-        />
+        /> */}
       </View>
     );
   }
@@ -44,7 +44,7 @@ export default class MainTabBar extends Component{
   render() {
     return(
       <TabBarIOS barStyle='black' itemPositioning='center'
-        tintColor='#DD4444' translucent={false}>
+        tintColor='#DD4444' translucent={false} style={styles.container}>
         <TabBarIOS.Item
           title='Blue Tab'
           icon={{uri: base64Icon, scale: 3}}
@@ -94,5 +94,10 @@ const styles = StyleSheet.create({
   tabText: {
     color: 'white',
     margin: 50,
+  },
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center"
   }
 });
