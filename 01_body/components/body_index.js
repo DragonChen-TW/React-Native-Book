@@ -6,12 +6,19 @@ export default class BodyIndex extends React.Component{
     super();
     this.state = {
       username: 'Parry',
-      timer: 0
+      timer: 0,
+      font_s: 20
     };
 
     setInterval(() => {
       this.setState({timer: this.state.timer + 1})
-    }, 1000);
+    }, 100);
+  }
+
+  dynamic_font_size(){
+      return {
+          fontSize: this.state.timer % 100 + 30
+      }
   }
 
   render(){
@@ -20,9 +27,10 @@ export default class BodyIndex extends React.Component{
     }, 5000);
 
     return (
-      <View>
-        <Text>Timer: {this.state.timer} secs</Text>
+      <View style={{alignItems: "center"}}>
+        <Text>Timer: {this.state.timer / 10} seconds</Text>
         <Text>Username: {this.state.username}</Text>
+        <Text style={this.dynamic_font_size()}>HI</Text>
       </View>
     )
   }
