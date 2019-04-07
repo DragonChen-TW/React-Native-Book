@@ -1,26 +1,13 @@
 import React from 'react';
-import { NavigatorIOS, StyleSheet } from 'react-native';
+import { Button, View, Text } from 'react-native';
+import { createStackNavigator, createAppContainer } from 'react-navigation'; // Version can be specified in package.json
 
-import MainView from './View';
+import {RootTab} from './View';
+
+const AppContainer = createAppContainer(RootTab);
 
 export default class App extends React.Component {
   render() {
-    return (
-      // <NavigatorIOS
-      //   initialRoute={{
-      //     title: '主頁面',
-      //     component: MainView
-      //   }}
-      // />
-      <MainView style={styles.container} />
-    );
+    return <AppContainer />;
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  }
-});
