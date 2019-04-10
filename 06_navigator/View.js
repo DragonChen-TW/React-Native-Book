@@ -1,18 +1,18 @@
 import React, {Component} from 'react';
-import {View, Text, Button, StyleSheet, Image} from 'react-native';
-
-import { createBottomTabNavigator } from 'react-navigation';
+import {View, ScrollView, Text, Button, StyleSheet, Image} from 'react-native';
 
 export class ElseView extends Component{
   render() {
     return (
-      <View style={styles.container}>
+      <ScrollView contentContainerStyle={{alignItems: 'center'}}>
         <Text>Nothing Else</Text>
         <Image style={{height: 400, width: 400}}
           source={require('./img/ddd.png')} />
         <Image style={{height: 400, width: 400}}
           source={{uri: 'https://i.imgur.com/bunXNTE.jpg'}} />
-      </View>
+        <Image style={{height: 400, width: 400}}
+          source={{uri: 'https://picsum.photos/500/400/?random=1'}} />
+      </ScrollView>
     );
   }
 }
@@ -42,14 +42,6 @@ export class Details extends Component{
     );
   }
 }
-
-export const RootTab = createBottomTabNavigator(
-  {
-    Home: MainView,
-    Details: Details,
-    Else: ElseView
-  }
-);
 
 const styles = StyleSheet.create({
   container: {
