@@ -100,6 +100,7 @@ export default class LoginView extends Component{
   }
 
   login() {
+    console.log('login');
     this.props.navigation.navigate('Signup');
   }
 }

@@ -4,7 +4,10 @@ import {
   StyleSheet,
   Text, View
 } from 'react-native';
-import {createStackNavigator, createAppContainer, createBottomTabNavigator} from 'react-navigation';
+import {
+  createStackNavigator, createAppContainer,
+  createBottomTabNavigator
+} from 'react-navigation';
 
 import LoginView from './screens/login';
 import SignupView from './screens/signup';
@@ -14,7 +17,7 @@ const AppStack = createStackNavigator({
   Login: LoginView,
   Signup: SignupView
 }, {
-  initialRouteName: 'Signup',
+  initialRouteName: 'Login',
   headerMode: 'none',
 });
 const AppContainer = createAppContainer(AppStack);
